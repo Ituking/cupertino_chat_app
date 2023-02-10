@@ -13,7 +13,10 @@ class MyApp extends StatelessWidget {
     return const CupertinoApp(
       debugShowCheckedModeBanner: false,
       home: HomePage(),
-      theme: CupertinoThemeData(brightness: Brightness.light),
+      theme: CupertinoThemeData(
+        brightness: Brightness.light,
+        primaryColor: Color(0xFF08C187),
+      ),
     );
   }
 }
