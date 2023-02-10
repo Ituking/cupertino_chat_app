@@ -25,6 +25,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       child: CupertinoTabScaffold(
+        resizeToAvoidBottomInset: true,
         tabBar: CupertinoTabBar(
           items: const [
             BottomNavigationBarItem(
