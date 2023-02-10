@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
-  var screens = [
+  final List screens = [
     const Chats(),
     const Calls(),
     const People(),
