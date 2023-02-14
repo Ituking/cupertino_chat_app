@@ -12,7 +12,7 @@ import 'package:flutter/cupertino.dart';
 const bool useEmulator = true;
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized;
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   if (useEmulator) {
     _connectToFirebaseEmulator();
