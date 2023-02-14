@@ -10,8 +10,8 @@ class Chats extends StatelessWidget {
         stream: FirebaseFirestore.instance.collection("chats").snapshots(),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           if (snapshot.hasError) {
-            return const Center(
-              child: Text("Something went wrong"),
+            return Center(
+              child: Text(snapshot.error.toString()),
             );
           }
 
