@@ -22,11 +22,19 @@ class Chats extends StatelessWidget {
           }
 
           if (snapshot.hasData) {
-            return const CustomScrollView(
+            return CustomScrollView(
               slivers: [
-                CupertinoSliverNavigationBar(
+                const CupertinoSliverNavigationBar(
                   largeTitle: Text("Chats"),
-                )
+                ),
+                SliverList(
+                    delegate: SliverChildListDelegate(
+                        snapshot.data!.docs.map((DocumentSnapshot document) {
+                  Map<String, dynamic> data = document.data()!;
+                  return CupertinoListTile(
+                    title: Text(data["title"]),
+                  );
+                }).toList()))
               ],
             );
           }
