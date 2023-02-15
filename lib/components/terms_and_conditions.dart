@@ -12,7 +12,13 @@ class TermsAndConditions extends StatelessWidget {
           Radius.circular(20),
         ),
       ),
-      child: const Text("Terms and conditions"),
+      child: Text(
+        "Terms and conditions",
+        style: TextStyle(
+          color: Colors.white.withOpacity(0.7),
+          fontWeight: FontWeight.normal,
+        ),
+      ),
     );
   }
 }
