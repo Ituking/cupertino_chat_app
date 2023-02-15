@@ -1,6 +1,8 @@
 import 'dart:ui';
 
+import 'package:cupertino_chat_app/components/lets_start.dart';
 import 'package:cupertino_chat_app/components/logo.dart';
+import 'package:cupertino_chat_app/components/teams_and_conditions.dart';
 import 'package:flutter/material.dart';
 
 class Hello extends StatelessWidget {
@@ -25,18 +27,24 @@ class Hello extends StatelessWidget {
         ),
         child: Container(
           color: Colors.black.withOpacity(0),
-          child: Column(
-            children: [
-              const Logo(),
-              const Text("Hello"),
-              Column(
-                children: const [
-                  Text("WhatsApp is a Cross-platform"),
-                  Text("mobile messaging with friends"),
-                  Text("all over the world"),
-                ],
-              ),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                const Logo(),
+                const Text("Hello"),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: const [
+                    Text("WhatsApp is a Cross-platform"),
+                    Text("mobile messaging with friends"),
+                    Text("all over the world"),
+                  ],
+                ),
+                const TeamsAndConditions(),
+                const LetsStart(),
+              ],
+            ),
           ),
         ),
       ),
