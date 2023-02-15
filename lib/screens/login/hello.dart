@@ -56,7 +56,9 @@ class Hello extends StatelessWidget {
               ),
             ],
           ),
-          const TermsAndConditions(),
+          TermsAndConditions(
+            onPressed: () {},
+          ),
           const LetsStart(),
         ],
       ),
