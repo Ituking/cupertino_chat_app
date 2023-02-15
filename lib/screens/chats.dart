@@ -30,12 +30,11 @@ class Chats extends StatelessWidget {
                 SliverList(
                     delegate: SliverChildListDelegate(
                         snapshot.data!.docs.map((DocumentSnapshot document) {
-                  // Map<String, dynamic> data = document.data()!;
-                  Map<String, dynamic> data = {};
-                  data = {ModalRoute.of(context)?.settings.arguments}
-                      as Map<String, dynamic>;
+                  Map<String, dynamic> data =
+                      document.data()! as dynamic; //as dynamicを追加
                   return CupertinoListTile(
                     title: Text(data["title"]),
+                    subtitle: const Text("title"), //subtitleを追加
                   );
                 }).toList()))
               ],
