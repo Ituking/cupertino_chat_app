@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class Hello extends StatelessWidget {
@@ -5,6 +7,25 @@ class Hello extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Container(
+      height: double.infinity,
+      width: double.infinity,
+      decoration: const BoxDecoration(
+        shape: BoxShape.rectangle,
+        image: DecorationImage(
+          image: AssetImage("images/salmen-bejaoui-uXTozY3CcQg-unsplash.jpg"),
+          fit: BoxFit.fill,
+        ),
+      ),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(
+          sigmaX: 10,
+          sigmaY: 10,
+        ),
+        child: Container(
+          color: Colors.black.withOpacity(0),
+        ),
+      ),
+    );
   }
 }
