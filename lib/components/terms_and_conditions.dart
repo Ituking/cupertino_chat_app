@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class BlueImagePageScaffold extends StatelessWidget {
-  const BlueImagePageScaffold({super.key});
+class TermsAndConditions extends StatelessWidget {
+  const TermsAndConditions({super.key});
 
   @override
   Widget build(BuildContext context) {
