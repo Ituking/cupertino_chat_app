@@ -12,7 +12,11 @@ class Hello extends StatelessWidget {
     return BlurImagePageScaffold(
       imagePath: "images/salmen-bejaoui-uXTozY3CcQg-unsplash.jpg",
       body: [
-        const Logo(),
+        const Logo(
+          height: 150.0,
+          width: 150.0,
+          radius: 50.0,
+        ),
         const Text("Hello"),
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,

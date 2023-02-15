@@ -1,23 +1,33 @@
 import 'package:flutter/material.dart';
 
 class Logo extends StatelessWidget {
-  const Logo({super.key});
+  final double width;
+  final double height;
+  final double radius;
+  const Logo(
+      {super.key,
+      required this.width,
+      required this.height,
+      required this.radius});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 150,
-      height: 150,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(
-          Radius.circular(50),
+        borderRadius: BorderRadius.all(
+          Radius.circular(radius),
         ),
         shape: BoxShape.rectangle,
         color: Colors.white.withOpacity(0.8),
       ),
-      child: const Image(
-        image: AssetImage("images/whatsapp.png"),
-        fit: BoxFit.fitWidth,
+      child: const Padding(
+        padding: EdgeInsets.all(2.0),
+        child: Image(
+          image: AssetImage("images/whatsapp.png"),
+          fit: BoxFit.fitWidth,
+        ),
       ),
     );
   }
