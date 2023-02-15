@@ -29,10 +29,31 @@ class Hello extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const [
-              Text("WhatsApp is a Cross-platform"),
-              Text("mobile messaging with friends"),
-              Text("all over the world"),
+            children: [
+              Text(
+                "WhatsApp is a Cross-platform",
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.7),
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+              Text(
+                "mobile messaging with friends",
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.7),
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
+              Text(
+                "all over the world",
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.7),
+                  fontSize: 20,
+                  fontWeight: FontWeight.normal,
+                ),
+              ),
             ],
           ),
           const TermsAndConditions(),
