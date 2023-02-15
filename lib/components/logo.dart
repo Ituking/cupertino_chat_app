@@ -15,6 +15,10 @@ class Logo extends StatelessWidget {
         shape: BoxShape.rectangle,
         color: Colors.white.withOpacity(0.8),
       ),
+      child: const Image(
+        image: AssetImage("images/whatsapp.png"),
+        fit: BoxFit.fitWidth,
+      ),
     );
   }
 }
