@@ -9,27 +9,29 @@ class Hello extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlurImagePageScaffold(
-      imagePath: "images/salmen-bejaoui-uXTozY3CcQg-unsplash.jpg",
-      body: [
-        const Logo(
-          height: 150.0,
-          width: 150.0,
-          radius: 50.0,
-        ),
-        const Text("Hello"),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
-            Text("WhatsApp is a Cross-platform"),
-            Text("mobile messaging with friends"),
-            Text("all over the world"),
-          ],
-        ),
-        const TermsAndConditions(),
-        const LetsStart(),
-      ],
+    return SafeArea(
+      child: BlurImagePageScaffold(
+        imagePath: "images/salmen-bejaoui-uXTozY3CcQg-unsplash.jpg",
+        body: [
+          const Logo(
+            height: 150.0,
+            width: 150.0,
+            radius: 50.0,
+          ),
+          const Text("Hello"),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: const [
+              Text("WhatsApp is a Cross-platform"),
+              Text("mobile messaging with friends"),
+              Text("all over the world"),
+            ],
+          ),
+          const TermsAndConditions(),
+          const LetsStart(),
+        ],
+      ),
     );
   }
 }
