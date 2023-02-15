@@ -18,7 +18,14 @@ class Hello extends StatelessWidget {
             width: 150.0,
             radius: 50.0,
           ),
-          const Text("Hello"),
+          Text(
+            "Hello",
+            style: TextStyle(
+              color: Colors.white.withOpacity(0.7),
+              fontSize: 60,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
