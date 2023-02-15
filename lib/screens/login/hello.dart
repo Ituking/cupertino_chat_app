@@ -59,7 +59,9 @@ class Hello extends StatelessWidget {
           TermsAndConditions(
             onPressed: () {},
           ),
-          const LetsStart(),
+          LetsStart(
+            onPressed: () {},
+          ),
         ],
       ),
     );
