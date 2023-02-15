@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:cupertino_chat_app/components/logo.dart';
 import 'package:flutter/material.dart';
 
 class Hello extends StatelessWidget {
@@ -24,6 +25,19 @@ class Hello extends StatelessWidget {
         ),
         child: Container(
           color: Colors.black.withOpacity(0),
+          child: Column(
+            children: [
+              const Logo(),
+              const Text("Hello"),
+              Column(
+                children: const [
+                  Text("WhatsApp is a Cross-platform"),
+                  Text("mobile messaging with friends"),
+                  Text("all over the world"),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
