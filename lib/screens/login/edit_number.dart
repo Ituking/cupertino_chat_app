@@ -25,10 +25,10 @@ class _EditNumberState extends State<EditNumber> {
               const Logo(width: 80.0, height: 80.0, radius: 30.0),
               Expanded(
                 child: Text(
-                  "Verification ・ one step",
+                  "Verification・one step",
                   style: TextStyle(
                     color: const Color(0xFF08C187).withOpacity(0.7),
-                    fontSize: 25,
+                    fontSize: 28,
                   ),
                 ),
               ),
