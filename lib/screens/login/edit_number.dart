@@ -1,3 +1,4 @@
+import 'package:cupertino_chat_app/components/logo.dart';
 import 'package:flutter/cupertino.dart';
 
 class EditNumber extends StatefulWidget {
@@ -13,9 +14,18 @@ class _EditNumberState extends State<EditNumber> {
     return CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(
         middle: Text("Edit Number"),
+        previousPageTitle: "Back",
       ),
       child: Column(
-        children: const [],
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            children: const [
+              Logo(width: 80.0, height: 80.0, radius: 30.0),
+            ],
+          )
+        ],
       ),
     );
   }
