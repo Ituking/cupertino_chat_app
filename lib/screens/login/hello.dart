@@ -9,61 +9,53 @@ class Hello extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: BlurImagePageScaffold(
-        imagePath: "images/salmen-bejaoui-uXTozY3CcQg-unsplash.jpg",
-        body: [
-          const Logo(
-            height: 150.0,
-            width: 150.0,
-            radius: 50.0,
+    return BlurImagePageScaffold(
+      imagePath: "images/salmen-bejaoui-uXTozY3CcQg-unsplash.jpg",
+      body: [
+        const Logo(width: 150, height: 150, radius: 50),
+        Text(
+          "Hello",
+          style: TextStyle(
+            color: Colors.white.withOpacity(0.7),
+            fontSize: 60,
+            fontWeight: FontWeight.normal,
           ),
-          Text(
-            "Hello",
-            style: TextStyle(
-              color: Colors.white.withOpacity(0.7),
-              fontSize: 60,
-              fontWeight: FontWeight.bold,
+        ),
+        Column(
+          children: [
+            Text(
+              "WhatsApp is a Cross-platform",
+              style: TextStyle(
+                color: Colors.white.withOpacity(0.7),
+                fontSize: 20,
+                fontWeight: FontWeight.normal,
+              ),
             ),
-          ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Text(
-                "WhatsApp is a Cross-platform",
-                style: TextStyle(
-                  color: Colors.white.withOpacity(0.7),
-                  fontSize: 20,
-                  fontWeight: FontWeight.normal,
-                ),
+            Text(
+              "mobile messaging with friends",
+              style: TextStyle(
+                color: Colors.white.withOpacity(0.7),
+                fontSize: 20,
+                fontWeight: FontWeight.normal,
               ),
-              Text(
-                "mobile messaging with friends",
-                style: TextStyle(
-                  color: Colors.white.withOpacity(0.7),
-                  fontSize: 20,
-                  fontWeight: FontWeight.normal,
-                ),
+            ),
+            Text(
+              "all over the world",
+              style: TextStyle(
+                color: Colors.white.withOpacity(0.7),
+                fontSize: 20,
+                fontWeight: FontWeight.normal,
               ),
-              Text(
-                "all over the world",
-                style: TextStyle(
-                  color: Colors.white.withOpacity(0.7),
-                  fontSize: 20,
-                  fontWeight: FontWeight.normal,
-                ),
-              ),
-            ],
-          ),
-          TermsAndConditions(
-            onPressed: () {},
-          ),
-          LetsStart(
-            onPressed: () {},
-          ),
-        ],
-      ),
+            ),
+          ],
+        ),
+        TermsAndConditions(
+          onPressed: () {},
+        ),
+        LetsStart(
+          onPressed: () {},
+        ),
+      ],
     );
   }
 }

@@ -12,10 +12,10 @@ class BlurImagePageScaffold extends StatelessWidget {
     return Container(
       height: double.infinity,
       width: double.infinity,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         shape: BoxShape.rectangle,
         image: DecorationImage(
-          image: AssetImage(imagePath),
+          image: AssetImage("images/salmen-bejaoui-uXTozY3CcQg-unsplash.jpg"),
           fit: BoxFit.fill,
         ),
       ),
@@ -26,10 +26,10 @@ class BlurImagePageScaffold extends StatelessWidget {
         ),
         child: Container(
           color: Colors.black.withOpacity(0),
-          child: SingleChildScrollView(
-            child: Column(
-              children: body,
-            ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: body,
           ),
         ),
       ),

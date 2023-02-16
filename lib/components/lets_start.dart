@@ -20,6 +20,7 @@ class LetsStart extends StatelessWidget {
             style: TextStyle(
               color: CupertinoColors.white.withOpacity(0.7),
               fontSize: 25,
+              fontWeight: FontWeight.normal,
             ),
           ),
         ],
