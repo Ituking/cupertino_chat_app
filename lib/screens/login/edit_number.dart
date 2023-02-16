@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class EditNumber extends StatefulWidget {
   const EditNumber({super.key});
@@ -10,6 +10,13 @@ class EditNumber extends StatefulWidget {
 class _EditNumberState extends State<EditNumber> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return CupertinoPageScaffold(
+      navigationBar: const CupertinoNavigationBar(
+        middle: Text("Edit Number"),
+      ),
+      child: Column(
+        children: const [],
+      ),
+    );
   }
 }
