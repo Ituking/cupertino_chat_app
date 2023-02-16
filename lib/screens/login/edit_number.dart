@@ -76,7 +76,13 @@ class _EditNumberState extends State<EditNumber> {
               ],
             ),
           ),
-          const Text("You will receive an activation code in short time"),
+          const Text(
+            "You will receive an activation code in short time",
+            style: TextStyle(
+              color: CupertinoColors.systemGrey,
+              fontSize: 15,
+            ),
+          ),
           CupertinoButton.filled(
             child: const Text("Request code"),
             onPressed: () {},
