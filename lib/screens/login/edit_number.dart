@@ -83,9 +83,12 @@ class _EditNumberState extends State<EditNumber> {
               fontSize: 15,
             ),
           ),
-          CupertinoButton.filled(
-            child: const Text("Request code"),
-            onPressed: () {},
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 40),
+            child: CupertinoButton.filled(
+              child: const Text("Request code"),
+              onPressed: () {},
+            ),
           ),
         ],
       ),
