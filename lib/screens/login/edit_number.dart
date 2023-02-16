@@ -34,6 +34,9 @@ class _EditNumberState extends State<EditNumber> {
               ),
             ],
           ),
+          Text(
+            "Enter your phone number",
+          ),
         ],
       ),
     );
