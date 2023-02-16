@@ -51,27 +51,30 @@ class _EditNumberState extends State<EditNumber> {
               ),
             ),
           ),
-          Row(
-            children: [
-              const Text(
-                "+81",
-                style: TextStyle(
-                  fontSize: 25,
-                  color: CupertinoColors.secondaryLabel,
-                ),
-              ),
-              Expanded(
-                child: CupertinoTextField(
-                  placeholder: "Enter your phone number",
-                  controller: _enterPhoneNumber,
-                  keyboardType: TextInputType.number,
-                  style: const TextStyle(
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                const Text(
+                  "+81",
+                  style: TextStyle(
                     fontSize: 25,
                     color: CupertinoColors.secondaryLabel,
                   ),
                 ),
-              ),
-            ],
+                Expanded(
+                  child: CupertinoTextField(
+                    placeholder: "Enter your phone number",
+                    controller: _enterPhoneNumber,
+                    keyboardType: TextInputType.number,
+                    style: const TextStyle(
+                      fontSize: 25,
+                      color: CupertinoColors.secondaryLabel,
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),
