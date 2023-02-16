@@ -54,6 +54,10 @@ class _EditNumberState extends State<EditNumber> {
             children: const [
               Text(
                 "+81",
+                style: TextStyle(
+                  fontSize: 25,
+                  color: CupertinoColors.secondaryLabel,
+                ),
               ),
             ],
           ),
