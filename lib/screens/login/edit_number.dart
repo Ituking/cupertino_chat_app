@@ -76,6 +76,11 @@ class _EditNumberState extends State<EditNumber> {
               ],
             ),
           ),
+          const Text(""),
+          CupertinoButton.filled(
+            child: const Text(""),
+            onPressed: () {},
+          ),
         ],
       ),
     );
