@@ -41,6 +41,15 @@ class _EditNumberState extends State<EditNumber> {
               fontSize: 28,
             ),
           ),
+          CupertinoListTile(
+            onTap: () {},
+            title: const Text(
+              "Japan",
+              style: TextStyle(
+                color: Color(0xFF08C187),
+              ),
+            ),
+          ),
         ],
       ),
     );
