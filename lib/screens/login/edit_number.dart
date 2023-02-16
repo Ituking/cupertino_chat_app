@@ -9,6 +9,7 @@ class EditNumber extends StatefulWidget {
 }
 
 class _EditNumberState extends State<EditNumber> {
+  final _enterPhoneNumber = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
@@ -51,12 +52,23 @@ class _EditNumberState extends State<EditNumber> {
             ),
           ),
           Row(
-            children: const [
-              Text(
+            children: [
+              const Text(
                 "+81",
                 style: TextStyle(
                   fontSize: 25,
                   color: CupertinoColors.secondaryLabel,
+                ),
+              ),
+              Expanded(
+                child: CupertinoTextField(
+                  placeholder: "Enter your phone number",
+                  controller: _enterPhoneNumber,
+                  keyboardType: TextInputType.number,
+                  style: const TextStyle(
+                    fontSize: 25,
+                    color: CupertinoColors.secondaryLabel,
+                  ),
                 ),
               ),
             ],
