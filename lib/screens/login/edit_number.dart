@@ -42,14 +42,24 @@ class _EditNumberState extends State<EditNumber> {
               fontSize: 28,
             ),
           ),
-          CupertinoListTile(
-            onTap: () {},
-            title: const Text(
-              "Japan",
-              style: TextStyle(
+          Row(
+            children: [
+              Expanded(
+                child: CupertinoListTile(
+                  onTap: () {},
+                  title: const Text(
+                    "Japan",
+                    style: TextStyle(
+                      color: Color(0xFF08C187),
+                    ),
+                  ),
+                ),
+              ),
+              const Icon(
+                CupertinoIcons.right_chevron,
                 color: Color(0xFF08C187),
               ),
-            ),
+            ],
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
