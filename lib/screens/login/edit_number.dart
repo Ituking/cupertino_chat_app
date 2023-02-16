@@ -36,6 +36,10 @@ class _EditNumberState extends State<EditNumber> {
           ),
           Text(
             "Enter your phone number",
+            style: TextStyle(
+              color: CupertinoColors.systemGrey.withOpacity(0.7),
+              fontSize: 28,
+            ),
           ),
         ],
       ),
