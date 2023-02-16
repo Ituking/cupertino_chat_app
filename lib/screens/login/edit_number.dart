@@ -78,7 +78,7 @@ class _EditNumberState extends State<EditNumber> {
           ),
           const Text("You will receive an activation code in short time"),
           CupertinoButton.filled(
-            child: const Text(""),
+            child: const Text("Request code"),
             onPressed: () {},
           ),
         ],
