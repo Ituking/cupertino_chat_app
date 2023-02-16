@@ -50,6 +50,13 @@ class _EditNumberState extends State<EditNumber> {
               ),
             ),
           ),
+          Row(
+            children: const [
+              Text(
+                "+81",
+              ),
+            ],
+          ),
         ],
       ),
     );
