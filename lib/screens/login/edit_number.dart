@@ -28,10 +28,10 @@ class _EditNumberState extends State<EditNumber> {
                   "Verification ・ one step",
                   style: TextStyle(
                     color: const Color(0xFF08C187).withOpacity(0.7),
-                    fontSize: 30,
+                    fontSize: 25,
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ],
