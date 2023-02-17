@@ -31,15 +31,15 @@ class _SelectCountryState extends State<SelectCountry> {
 
   @override
   Widget build(BuildContext context) {
-    return const CupertinoPageScaffold(
+    return CupertinoPageScaffold(
       child: CustomScrollView(
         slivers: [
-          CupertinoSliverNavigationBar(
+          const CupertinoSliverNavigationBar(
             largeTitle: Text("Select Country"),
             previousPageTitle: "Edit Number",
           ),
           SliverList(
-            delegate: SliverChildDelegate([]),
+            delegate: SliverChildListDelegate(data ≠ null) ? data!.map((e) => CupertinoListTile(title: Text(e["name"]), trailing: Text(e["dial_code"]),)).toList() : [Center(child: Text("Loading"),)],
           ),
         ],
       ),
