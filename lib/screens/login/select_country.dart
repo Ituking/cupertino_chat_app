@@ -1,10 +1,31 @@
-import 'package:flutter/material.dart';
+import 'dart:ffi';
 
-class SelectCountry extends StatelessWidget {
+import 'package:flutter/cupertino.dart';
+
+class SelectCountry extends StatefulWidget {
   const SelectCountry({super.key});
 
   @override
+  State<SelectCountry> createState() => _SelectCountryState();
+}
+
+class _SelectCountryState extends State<SelectCountry> {
+  @override
+  Void? initState() {
+    super.initState();
+    return null;
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const CupertinoPageScaffold(
+      child: CustomScrollView(
+        slivers: [
+          CupertinoSliverNavigationBar(
+            largeTitle: Text("Select Country"),
+          ),
+        ],
+      ),
+    );
   }
 }
