@@ -1,6 +1,8 @@
+import 'dart:convert';
 import 'dart:ffi';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 
 class SelectCountry extends StatefulWidget {
   const SelectCountry({super.key});
@@ -10,10 +12,21 @@ class SelectCountry extends StatefulWidget {
 }
 
 class _SelectCountryState extends State<SelectCountry> {
+  List<dynamic>? dataRetrieved;
+  List<dynamic>? data;
   @override
-  Void? initState() {
+  void initState() {
     super.initState();
-    return null;
+    _getData();
+  }
+
+  Future _getData() async {
+    final String response =
+        await rootBundle.loadString("assets/CountryCodes.json");
+    dataRetrieved = await json.decode(response) as List<dynamic>;
+    setState(() {
+      data = dataRetrieved;
+    });
   }
 
   @override
@@ -23,6 +36,10 @@ class _SelectCountryState extends State<SelectCountry> {
         slivers: [
           CupertinoSliverNavigationBar(
             largeTitle: Text("Select Country"),
+            previousPageTitle: "Edit Number",
+          ),
+          SliverList(
+            delegate: SliverChildDelegate([]),
           ),
         ],
       ),
