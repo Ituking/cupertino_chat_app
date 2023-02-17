@@ -53,11 +53,11 @@ class _EditNumberState extends State<EditNumber> {
                       color: Color(0xFF08C187),
                     ),
                   ),
+                  trailing: const Icon(
+                    CupertinoIcons.right_chevron,
+                    color: Color(0xFF08C187),
+                  ),
                 ),
-              ),
-              const Icon(
-                CupertinoIcons.right_chevron,
-                color: Color(0xFF08C187),
               ),
             ],
           ),
