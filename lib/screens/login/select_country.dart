@@ -14,6 +14,8 @@ class SelectCountry extends StatefulWidget {
 class _SelectCountryState extends State<SelectCountry> {
   List<dynamic>? dataRetrieved;
   List<dynamic>? data;
+  final _searchController = TextEditingController();
+  var searchValue = "";
 
   @override
   void initState() {
@@ -39,8 +41,15 @@ class _SelectCountryState extends State<SelectCountry> {
             largeTitle: Text("Select Country"),
             previousPageTitle: "Edit Number",
           ),
-          const SliverToBoxAdapter(
-            child: CupertinoSearchTextField(),
+          SliverToBoxAdapter(
+            child: CupertinoSearchTextField(
+              onChanged: (value) {
+                setState(() {
+                  searchValue = value;
+                });
+              },
+              controller: _searchController,
+            ),
           ),
           SliverList(
             delegate: SliverChildListDelegate(
@@ -51,6 +60,7 @@ class _SelectCountryState extends State<SelectCountry> {
                       ),
                     ]
                   : data!
+                      .where((e) => e["name"].toString().contains(searchValue))
                       .map((e) => CupertinoListTile(
                             onTap: () {
                               if (kDebugMode) {
