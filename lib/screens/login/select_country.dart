@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 class SelectCountry extends StatefulWidget {
@@ -48,6 +49,11 @@ class _SelectCountryState extends State<SelectCountry> {
                     ]
                   : data!
                       .map((e) => CupertinoListTile(
+                            onTap: () {
+                              if (kDebugMode) {
+                                print(e["name"]);
+                              }
+                            },
                             title: Text(e["name"]),
                             trailing: Text(e["dial_code"]),
                           ))
