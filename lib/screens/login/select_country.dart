@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:ffi';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
@@ -14,6 +13,7 @@ class SelectCountry extends StatefulWidget {
 class _SelectCountryState extends State<SelectCountry> {
   List<dynamic>? dataRetrieved;
   List<dynamic>? data;
+
   @override
   void initState() {
     super.initState();
@@ -39,21 +39,32 @@ class _SelectCountryState extends State<SelectCountry> {
             previousPageTitle: "Edit Number",
           ),
           SliverList(
-            delegate: SliverChildListDelegate(data != null)
-                ? data!
-                    .map((e) => CupertinoListTile(
-                          title: Text(e["name"]),
-                          trailing: Text(e["dial_code"]),
-                        ))
-                    .toList()
-                : [
-                    Center(
-                      child: Text("Loading"),
-                    )
-                  ],
+            delegate: SliverChildListDelegate(
+              (data == null)
+                  ? [
+                      const Center(
+                        child: Text("Loading"),
+                      ),
+                    ]
+                  : data!
+                      .map((e) => CupertinoListTile(
+                            title: Text(e["name"]),
+                            trailing: Text(e["dial_code"]),
+                          ))
+                      .toList(),
+            ),
           ),
         ],
       ),
     );
+  }
+}
+
+class DataConstructor extends StatelessWidget {
+  const DataConstructor({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
