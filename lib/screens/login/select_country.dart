@@ -39,6 +39,9 @@ class _SelectCountryState extends State<SelectCountry> {
             largeTitle: Text("Select Country"),
             previousPageTitle: "Edit Number",
           ),
+          const SliverToBoxAdapter(
+            child: CupertinoSearchTextField(),
+          ),
           SliverList(
             delegate: SliverChildListDelegate(
               (data == null)
