@@ -39,7 +39,18 @@ class _SelectCountryState extends State<SelectCountry> {
             previousPageTitle: "Edit Number",
           ),
           SliverList(
-            delegate: SliverChildListDelegate(data ≠ null) ? data!.map((e) => CupertinoListTile(title: Text(e["name"]), trailing: Text(e["dial_code"]),)).toList() : [Center(child: Text("Loading"),)],
+            delegate: SliverChildListDelegate(data != null)
+                ? data!
+                    .map((e) => CupertinoListTile(
+                          title: Text(e["name"]),
+                          trailing: Text(e["dial_code"]),
+                        ))
+                    .toList()
+                : [
+                    Center(
+                      child: Text("Loading"),
+                    )
+                  ],
           ),
         ],
       ),
