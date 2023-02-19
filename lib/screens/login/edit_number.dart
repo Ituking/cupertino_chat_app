@@ -76,11 +76,14 @@ class _EditNumberState extends State<EditNumber> {
             padding: const EdgeInsets.all(8.0),
             child: Row(
               children: [
-                Text(
-                  data["code"],
-                  style: const TextStyle(
-                    fontSize: 25,
-                    color: CupertinoColors.secondaryLabel,
+                Padding(
+                  padding: const EdgeInsets.only(right: 6.0),
+                  child: Text(
+                    data["code"],
+                    style: const TextStyle(
+                      fontSize: 25,
+                      color: CupertinoColors.secondaryLabel,
+                    ),
                   ),
                 ),
                 Expanded(
