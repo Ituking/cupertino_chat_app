@@ -69,6 +69,10 @@ class _SelectCountryState extends State<SelectCountry> {
                               if (kDebugMode) {
                                 print(e["name"]);
                               }
+                              Navigator.pop(context, {
+                                "name": e["name"],
+                                "code": e["dial_code"],
+                              });
                             },
                             title: Text(e["name"]),
                             trailing: Text(e["dial_code"]),
@@ -79,14 +83,5 @@ class _SelectCountryState extends State<SelectCountry> {
         ],
       ),
     );
-  }
-}
-
-class DataConstructor extends StatelessWidget {
-  const DataConstructor({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }
