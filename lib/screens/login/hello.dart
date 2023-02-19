@@ -2,6 +2,8 @@ import 'package:cupertino_chat_app/components/blur_image_page_scaffold.dart';
 import 'package:cupertino_chat_app/components/lets_start.dart';
 import 'package:cupertino_chat_app/components/logo.dart';
 import 'package:cupertino_chat_app/components/terms_and_conditions.dart';
+import 'package:cupertino_chat_app/screens/login/edit_number.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Hello extends StatelessWidget {
@@ -53,7 +55,10 @@ class Hello extends StatelessWidget {
           onPressed: () {},
         ),
         LetsStart(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                CupertinoPageRoute(builder: (context) => const EditNumber()));
+          },
         ),
       ],
     );
