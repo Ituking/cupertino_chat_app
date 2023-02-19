@@ -60,7 +60,10 @@ class _SelectCountryState extends State<SelectCountry> {
                       ),
                     ]
                   : data!
-                      .where((e) => e["name"].toString().contains(searchValue))
+                      .where((e) => e["name"]
+                          .toString()
+                          .toLowerCase()
+                          .contains(searchValue.toLowerCase()))
                       .map((e) => CupertinoListTile(
                             onTap: () {
                               if (kDebugMode) {
