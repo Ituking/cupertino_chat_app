@@ -1,4 +1,5 @@
 import 'package:cupertino_chat_app/components/logo.dart';
+import 'package:cupertino_chat_app/screens/login/select_country.dart';
 import 'package:flutter/cupertino.dart';
 
 class EditNumber extends StatefulWidget {
@@ -10,6 +11,8 @@ class EditNumber extends StatefulWidget {
 
 class _EditNumberState extends State<EditNumber> {
   final _enterPhoneNumber = TextEditingController();
+  Map<String, dynamic> data = {"name": "Japan", "code": "+81"};
+  Map<String, dynamic> dataResult = {};
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
@@ -46,10 +49,18 @@ class _EditNumberState extends State<EditNumber> {
             children: [
               Expanded(
                 child: CupertinoListTile(
-                  onTap: () {},
-                  title: const Text(
-                    "Japan",
-                    style: TextStyle(
+                  onTap: () async {
+                    dataResult = await Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                            builder: (context) => const SelectCountry()));
+                    setState(() {
+                      data = dataResult;
+                    });
+                  },
+                  title: Text(
+                    data["name"],
+                    style: const TextStyle(
                       color: Color(0xFF08C187),
                     ),
                   ),
@@ -65,9 +76,9 @@ class _EditNumberState extends State<EditNumber> {
             padding: const EdgeInsets.all(8.0),
             child: Row(
               children: [
-                const Text(
-                  "+81",
-                  style: TextStyle(
+                Text(
+                  data["code"],
+                  style: const TextStyle(
                     fontSize: 25,
                     color: CupertinoColors.secondaryLabel,
                   ),
