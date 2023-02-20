@@ -12,7 +12,7 @@ class VerifyNumber extends StatefulWidget {
 
 class _VerifyNumberState extends State<VerifyNumber> {
   final phoneNumber;
-  var _status = Status.waiting;
+  final _status = Status.error;
   var _verificationId;
 
   _VerifyNumberState(this.phoneNumber);
@@ -25,11 +25,29 @@ class _VerifyNumberState extends State<VerifyNumber> {
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
+      navigationBar: const CupertinoNavigationBar(
         middle: Text("Verify Number"),
         previousPageTitle: "Edit Number",
       ),
-      child: Container(),
+      child: _status != Status.error
+          ? Column(
+              children: const [],
+            )
+          : Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Center(
+                  child: Text(
+                    "OTP verification",
+                    style: TextStyle(
+                      color: const Color(0xFF08C187).withOpacity(0.7),
+                      fontSize: 30,
+                    ),
+                  ),
+                ),
+              ],
+            ),
     );
   }
 }
