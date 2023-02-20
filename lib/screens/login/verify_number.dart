@@ -13,6 +13,7 @@ class VerifyNumber extends StatefulWidget {
 class _VerifyNumberState extends State<VerifyNumber> {
   final phoneNumber;
   var _status = Status.waiting;
+  var _verificationId;
 
   _VerifyNumberState(this.phoneNumber);
 
