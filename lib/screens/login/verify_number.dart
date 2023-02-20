@@ -43,6 +43,13 @@ class _VerifyNumberState extends State<VerifyNumber> {
                     ),
                   ),
                 ),
+                const Text(
+                  "Enter OTP sent to",
+                  style: TextStyle(
+                    color: CupertinoColors.secondaryLabel,
+                    fontSize: 20,
+                  ),
+                ),
               ],
             )
           : Column(
