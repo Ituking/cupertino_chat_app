@@ -41,9 +41,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CupertinoApp(
       debugShowCheckedModeBanner: false,
-      home: VerifyNumber(
-        number: null,
-      ),
+      home: VerifyNumber(number: "+1234567890"),
       theme: CupertinoThemeData(
         brightness: Brightness.light,
         primaryColor: Color(0xFF08C187),

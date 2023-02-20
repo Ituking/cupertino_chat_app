@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 enum Status { waiting, error }
 
 class VerifyNumber extends StatefulWidget {
-  final number;
+  final String number;
   const VerifyNumber({super.key, required this.number});
 
   @override
@@ -11,7 +11,7 @@ class VerifyNumber extends StatefulWidget {
 }
 
 class _VerifyNumberState extends State<VerifyNumber> {
-  final phoneNumber;
+  final String phoneNumber;
   final _status = Status.error;
   var _verificationId;
 
@@ -31,7 +31,7 @@ class _VerifyNumberState extends State<VerifyNumber> {
       ),
       child: _status != Status.error
           ? Column(
-              children: const [],
+              children: [],
             )
           : Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -46,6 +46,7 @@ class _VerifyNumberState extends State<VerifyNumber> {
                     ),
                   ),
                 ),
+                const Text("The code used is invalid!"),
               ],
             ),
     );
