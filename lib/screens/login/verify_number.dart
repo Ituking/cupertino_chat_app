@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 enum Status { waiting, error }
 
@@ -24,6 +24,12 @@ class _VerifyNumberState extends State<VerifyNumber> {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        middle: Text("Verify Number"),
+        previousPageTitle: "Edit Number",
+      ),
+      child: Container(),
+    );
   }
 }
