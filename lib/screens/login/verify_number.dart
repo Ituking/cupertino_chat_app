@@ -48,8 +48,13 @@ class _VerifyNumberState extends State<VerifyNumber> {
                 ),
                 const Text("The code used is invalid!"),
                 CupertinoButton(
-                    child: const Text("Edit Number"),
-                    onPressed: () => Navigator.pop(context)),
+                  child: const Text("Edit Number"),
+                  onPressed: () => Navigator.pop(context),
+                ),
+                CupertinoButton(
+                  child: const Text("Resend Code"),
+                  onPressed: () => {},
+                ),
               ],
             ),
     );
