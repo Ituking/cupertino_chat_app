@@ -1,7 +1,25 @@
 import 'package:flutter/material.dart';
 
-class VerifyNumber extends StatelessWidget {
-  const VerifyNumber({super.key});
+enum Status { waiting, error }
+
+class VerifyNumber extends StatefulWidget {
+  final number;
+  const VerifyNumber({super.key, required this.number});
+
+  @override
+  State<VerifyNumber> createState() => _VerifyNumberState(number);
+}
+
+class _VerifyNumberState extends State<VerifyNumber> {
+  final phoneNumber;
+  var _status = Status.waiting;
+
+  _VerifyNumberState(this.phoneNumber);
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
