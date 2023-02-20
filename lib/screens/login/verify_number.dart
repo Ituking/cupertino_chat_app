@@ -31,7 +31,7 @@ class _VerifyNumberState extends State<VerifyNumber> {
       ),
       child: _status != Status.error
           ? Column(
-              children: [],
+              children: const [],
             )
           : Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -47,6 +47,9 @@ class _VerifyNumberState extends State<VerifyNumber> {
                   ),
                 ),
                 const Text("The code used is invalid!"),
+                CupertinoButton(
+                    child: const Text("Edit Number"),
+                    onPressed: () => Navigator.pop(context)),
               ],
             ),
     );
