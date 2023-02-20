@@ -31,7 +31,19 @@ class _VerifyNumberState extends State<VerifyNumber> {
       ),
       child: _status != Status.error
           ? Column(
-              children: const [],
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Center(
+                  child: Text(
+                    "OTP verification",
+                    style: TextStyle(
+                      color: const Color(0xFF08C187).withOpacity(0.7),
+                      fontSize: 30,
+                    ),
+                  ),
+                ),
+              ],
             )
           : Column(
               mainAxisAlignment: MainAxisAlignment.center,
