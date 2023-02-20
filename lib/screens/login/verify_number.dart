@@ -15,6 +15,7 @@ class _VerifyNumberState extends State<VerifyNumber> {
   final String phoneNumber;
   final _status = Status.error;
   var _verificationId;
+  final _textEditingController = TextEditingController();
 
   _VerifyNumberState(this.phoneNumber);
 
@@ -59,7 +60,23 @@ class _VerifyNumberState extends State<VerifyNumber> {
                     }
                     if (value.length == 6) {}
                   },
-                )
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(letterSpacing: 30, fontSize: 30),
+                  maxLength: 6,
+                  controller: _textEditingController,
+                  keyboardType: TextInputType.number,
+                  autofillHints: const <String>[AutofillHints.telephoneNumber],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text("Didn't receive the OTP?"),
+                    CupertinoButton(
+                      child: const Text("RESEND OTP"),
+                      onPressed: () => {},
+                    ),
+                  ],
+                ),
               ],
             )
           : Column(
