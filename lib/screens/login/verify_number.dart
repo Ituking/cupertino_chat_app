@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 
 enum Status { waiting, error }
 
@@ -50,6 +51,15 @@ class _VerifyNumberState extends State<VerifyNumber> {
                     fontSize: 20,
                   ),
                 ),
+                Text(phoneNumber),
+                CupertinoTextField(
+                  onChanged: (value) async {
+                    if (kDebugMode) {
+                      print(value);
+                    }
+                    if (value.length == 6) {}
+                  },
+                )
               ],
             )
           : Column(
