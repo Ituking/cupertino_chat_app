@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 
@@ -16,12 +17,23 @@ class _VerifyNumberState extends State<VerifyNumber> {
   final _status = Status.error;
   var _verificationId;
   final _textEditingController = TextEditingController();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   _VerifyNumberState(this.phoneNumber);
 
   @override
   void initState() {
     super.initState();
+    _verifyPhoneNumber();
+  }
+
+  Future _verifyPhoneNumber() async {
+    _auth.verifyPhoneNumber(
+        phoneNumber: phoneNumber,
+        verificationCompleted: (phoneAuthCredential) async {},
+        verificationFailed: (verificationFailed) async {},
+        codeSent: (verifficationId, resendingToken) async {},
+        codeAutoRetrievalTimeout: (codeAutoRetrievalTimeout) async {});
   }
 
   @override
