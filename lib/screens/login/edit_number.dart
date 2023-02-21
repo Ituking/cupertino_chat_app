@@ -1,5 +1,6 @@
 import 'package:cupertino_chat_app/components/logo.dart';
 import 'package:cupertino_chat_app/screens/login/select_country.dart';
+import 'package:cupertino_chat_app/screens/login/verify_number.dart';
 import 'package:flutter/cupertino.dart';
 
 class EditNumber extends StatefulWidget {
@@ -51,9 +52,11 @@ class _EditNumberState extends State<EditNumber> {
                 child: CupertinoListTile(
                   onTap: () async {
                     dataResult = await Navigator.push(
-                        context,
-                        CupertinoPageRoute(
-                            builder: (context) => const SelectCountry()));
+                      context,
+                      CupertinoPageRoute(
+                        builder: (context) => const SelectCountry(),
+                      ),
+                    );
                     setState(() {
                       data = dataResult;
                     });
@@ -111,7 +114,16 @@ class _EditNumberState extends State<EditNumber> {
             padding: const EdgeInsets.symmetric(vertical: 40),
             child: CupertinoButton.filled(
               child: const Text("Request code"),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  CupertinoPageRoute(
+                    builder: (context) => VerifyNumber(
+                      number: data["code"]! + _enterPhoneNumber.text,
+                    ),
+                  ),
+                );
+              },
             ),
           ),
         ],
