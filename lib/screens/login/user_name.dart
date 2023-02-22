@@ -15,6 +15,8 @@ class UserName extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(fontSize: 25),
             maxLength: 15,
+            keyboardType: TextInputType.name,
+            autofillHints: <String>[AutofillHints.name],
           ),
         ],
       ),
