@@ -49,8 +49,8 @@ class _VerifyNumberState extends State<VerifyNumber> {
       await _auth
           .signInWithCredential(credential)
           .then((value) {
-            Navigator.push(context,
-                CupertinoPageRoute(builder: (context) => const UserName()));
+            Navigator.push(
+                context, CupertinoPageRoute(builder: (context) => UserName()));
           })
           .whenComplete(() {})
           .onError((error, stackTrace) {
