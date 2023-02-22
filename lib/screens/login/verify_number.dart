@@ -14,8 +14,8 @@ class VerifyNumber extends StatefulWidget {
 
 class _VerifyNumberState extends State<VerifyNumber> {
   final String phoneNumber;
-  final _status = Status.error;
-  var _verificationId;
+  late Status _status;
+  late String _verificationId;
   final _textEditingController = TextEditingController();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -32,8 +32,30 @@ class _VerifyNumberState extends State<VerifyNumber> {
         phoneNumber: phoneNumber,
         verificationCompleted: (phoneAuthCredential) async {},
         verificationFailed: (verificationFailed) async {},
-        codeSent: (verifficationId, resendingToken) async {},
+        codeSent: (verifficationId, resendingToken) async {
+          setState(() {
+            this._verificationId = _verificationId;
+          });
+        },
         codeAutoRetrievalTimeout: (codeAutoRetrievalTimeout) async {});
+  }
+
+  Future _sendCodeToFirebase({String? code}) async {
+    if (this._verificationId != null) {
+      var credential = PhoneAuthProvider.credential(
+          verificationId: _verificationId, smsCode: code!);
+
+      await _auth
+          .signInWithCredential(credential)
+          .then((value) {})
+          .whenComplete(() {})
+          .onError((error, stackTrace) {
+        setState(() {
+          _textEditingController.text = "";
+          this._status = Status.error;
+        });
+      });
+    }
   }
 
   @override
@@ -70,7 +92,9 @@ class _VerifyNumberState extends State<VerifyNumber> {
                     if (kDebugMode) {
                       print(value);
                     }
-                    if (value.length == 6) {}
+                    if (value.length == 6) {
+                      _sendCodeToFirebase(code: value);
+                    }
                   },
                   textAlign: TextAlign.center,
                   style: const TextStyle(letterSpacing: 30, fontSize: 30),
@@ -111,7 +135,7 @@ class _VerifyNumberState extends State<VerifyNumber> {
                 ),
                 CupertinoButton(
                   child: const Text("Resend Code"),
-                  onPressed: () => {},
+                  onPressed: () async => _verifyPhoneNumber(),
                 ),
               ],
             ),
