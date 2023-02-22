@@ -9,7 +9,14 @@ class UserName extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const [Text("Enter your name")],
+        children: const [
+          Text("Enter your name"),
+          CupertinoTextField(
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 25),
+            maxLength: 15,
+          ),
+        ],
       ),
     );
   }
