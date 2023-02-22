@@ -34,14 +34,14 @@ class _VerifyNumberState extends State<VerifyNumber> {
         verificationFailed: (verificationFailed) async {},
         codeSent: (verifficationId, resendingToken) async {
           setState(() {
-            this._verificationId = _verificationId;
+            _verificationId = _verificationId;
           });
         },
         codeAutoRetrievalTimeout: (codeAutoRetrievalTimeout) async {});
   }
 
   Future _sendCodeToFirebase({String? code}) async {
-    if (this._verificationId != null) {
+    if (_verificationId != null) {
       var credential = PhoneAuthProvider.credential(
           verificationId: _verificationId, smsCode: code!);
 
@@ -52,7 +52,7 @@ class _VerifyNumberState extends State<VerifyNumber> {
           .onError((error, stackTrace) {
         setState(() {
           _textEditingController.text = "";
-          this._status = Status.error;
+          _status = Status.error;
         });
       });
     }
