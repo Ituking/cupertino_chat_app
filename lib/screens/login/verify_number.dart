@@ -1,3 +1,4 @@
+import 'package:cupertino_chat_app/screens/login/user_name.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
@@ -47,14 +48,17 @@ class _VerifyNumberState extends State<VerifyNumber> {
 
       await _auth
           .signInWithCredential(credential)
-          .then((value) {})
+          .then((value) {
+            Navigator.push(context,
+                CupertinoPageRoute(builder: (context) => const UserName()));
+          })
           .whenComplete(() {})
           .onError((error, stackTrace) {
-        setState(() {
-          _textEditingController.text = "";
-          _status = Status.error;
-        });
-      });
+            setState(() {
+              _textEditingController.text = "";
+              _status = Status.error;
+            });
+          });
     }
   }
 
