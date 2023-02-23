@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cupertino_chat_app/screens/login/edit_number.dart';
+import 'package:cupertino_chat_app/screens/login/hello.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const CupertinoApp(
       debugShowCheckedModeBanner: false,
-      home: EditNumber(),
+      home: Hello(),
       theme: CupertinoThemeData(
         brightness: Brightness.light,
         primaryColor: Color(0xFF08C187),
