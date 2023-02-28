@@ -16,7 +16,7 @@ class VerifyNumber extends StatefulWidget {
 class _VerifyNumberState extends State<VerifyNumber> {
   final String phoneNumber;
   Status? _status;
-  late String _verificationId;
+  late String _verificationId = "";
   final _textEditingController = TextEditingController();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
