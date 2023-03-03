@@ -112,9 +112,13 @@ class _VerifyNumberState extends State<VerifyNumber> {
                   children: [
                     const Text("Didn't receive the OTP?"),
                     CupertinoButton(
-                      child: const Text("RESEND OTP"),
-                      onPressed: () async => _verifyPhoneNumber(),
-                    ),
+                        child: const Text("RESEND OTP"),
+                        onPressed: () async {
+                          setState(() {
+                            _status = Status.waiting;
+                          });
+                          _verifyPhoneNumber();
+                        }),
                   ],
                 ),
               ],
