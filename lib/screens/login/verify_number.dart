@@ -14,7 +14,7 @@ class VerifyNumber extends StatefulWidget {
 }
 
 class _VerifyNumberState extends State<VerifyNumber> {
-  late final String phoneNumber;
+  final String phoneNumber;
   Status? _status;
   late String _verificationId = "";
   final _textEditingController = TextEditingController();
@@ -88,7 +88,7 @@ class _VerifyNumberState extends State<VerifyNumber> {
                     fontSize: 20,
                   ),
                 ),
-                Text(phoneNumber = phoneNumber),
+                Text(phoneNumber),
                 CupertinoTextField(
                   onChanged: (value) async {
                     if (kDebugMode) {
