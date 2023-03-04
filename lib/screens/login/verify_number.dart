@@ -33,31 +33,33 @@ class _VerifyNumberState extends State<VerifyNumber> {
         phoneNumber: phoneNumber,
         verificationCompleted: (phoneAuthCredential) async {},
         verificationFailed: (verificationFailed) async {},
-        codeSent: (verifficationId, resendingToken) async {
+        codeSent: (verificationId, resendingToken) async {
           setState(() {
-            _verificationId = _verificationId;
+            _verificationId = verificationId;
           });
         },
         codeAutoRetrievalTimeout: (codeAutoRetrievalTimeout) async {});
   }
 
   Future _sendCodeToFirebase({String? code}) async {
-    var credential = PhoneAuthProvider.credential(
-        verificationId: _verificationId, smsCode: code ?? "");
+    if (_verificationId != null) {
+      var credential = PhoneAuthProvider.credential(
+          verificationId: _verificationId, smsCode: code!);
 
-    await _auth
-        .signInWithCredential(credential)
-        .then((value) {
-          Navigator.push(
-              context, CupertinoPageRoute(builder: (context) => UserName()));
-        })
-        .whenComplete(() {})
-        .onError((error, stackTrace) {
-          setState(() {
-            _textEditingController.text = "";
-            _status = Status.error;
+      await _auth
+          .signInWithCredential(credential)
+          .then((value) {
+            Navigator.push(
+                context, CupertinoPageRoute(builder: (context) => UserName()));
+          })
+          .whenComplete(() {})
+          .onError((error, stackTrace) {
+            setState(() {
+              _textEditingController.text = "";
+              _status = Status.error;
+            });
           });
-        });
+    }
   }
 
   @override
