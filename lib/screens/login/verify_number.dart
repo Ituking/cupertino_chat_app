@@ -35,7 +35,7 @@ class _VerifyNumberState extends State<VerifyNumber> {
         verificationFailed: (verificationFailed) async {},
         codeSent: (verificationId, resendingToken) async {
           setState(() {
-            _verificationId = verificationId;
+            this._verificationId = verificationId;
           });
         },
         codeAutoRetrievalTimeout: (codeAutoRetrievalTimeout) async {});
