@@ -14,7 +14,7 @@ class VerifyNumber extends StatefulWidget {
 }
 
 class _VerifyNumberState extends State<VerifyNumber> {
-  final String phoneNumber;
+  late final String phoneNumber;
   Status? _status;
   late String _verificationId = "";
   final _textEditingController = TextEditingController();
@@ -42,24 +42,22 @@ class _VerifyNumberState extends State<VerifyNumber> {
   }
 
   Future _sendCodeToFirebase({String? code}) async {
-    if (_verificationId != null) {
-      var credential = PhoneAuthProvider.credential(
-          verificationId: _verificationId, smsCode: code!);
+    var credential = PhoneAuthProvider.credential(
+        verificationId: _verificationId, smsCode: code ?? "");
 
-      await _auth
-          .signInWithCredential(credential)
-          .then((value) {
-            Navigator.push(
-                context, CupertinoPageRoute(builder: (context) => UserName()));
-          })
-          .whenComplete(() {})
-          .onError((error, stackTrace) {
-            setState(() {
-              _textEditingController.text = "";
-              _status = Status.error;
-            });
+    await _auth
+        .signInWithCredential(credential)
+        .then((value) {
+          Navigator.push(
+              context, CupertinoPageRoute(builder: (context) => UserName()));
+        })
+        .whenComplete(() {})
+        .onError((error, stackTrace) {
+          setState(() {
+            _textEditingController.text = "";
+            _status = Status.error;
           });
-    }
+        });
   }
 
   @override
@@ -90,7 +88,7 @@ class _VerifyNumberState extends State<VerifyNumber> {
                     fontSize: 20,
                   ),
                 ),
-                Text(phoneNumber),
+                Text(phoneNumber = phoneNumber),
                 CupertinoTextField(
                   onChanged: (value) async {
                     if (kDebugMode) {
