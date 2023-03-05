@@ -36,6 +36,9 @@ class _VerifyNumberState extends State<VerifyNumber> {
         codeSent: (verificationId, resendingToken) async {
           setState(() {
             this._verificationId = verificationId;
+            if (kDebugMode) {
+              print('id: $_verificationId');
+            }
           });
         },
         codeAutoRetrievalTimeout: (codeAutoRetrievalTimeout) async {});
