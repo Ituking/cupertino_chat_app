@@ -45,24 +45,22 @@ class _VerifyNumberState extends State<VerifyNumber> {
   }
 
   Future _sendCodeToFirebase({String? code}) async {
-    if (_verificationId != null) {
-      var credential = PhoneAuthProvider.credential(
-          verificationId: _verificationId, smsCode: code!);
+    var credential = PhoneAuthProvider.credential(
+        verificationId: _verificationId, smsCode: code!);
 
-      await _auth
-          .signInWithCredential(credential)
-          .then((value) {
-            Navigator.push(
-                context, CupertinoPageRoute(builder: (context) => UserName()));
-          })
-          .whenComplete(() {})
-          .onError((error, stackTrace) {
-            setState(() {
-              _textEditingController.text = "";
-              _status = Status.error;
-            });
+    await _auth
+        .signInWithCredential(credential)
+        .then((value) {
+          Navigator.push(
+              context, CupertinoPageRoute(builder: (context) => UserName()));
+        })
+        .whenComplete(() {})
+        .onError((error, stackTrace) {
+          setState(() {
+            _textEditingController.text = "";
+            _status = Status.error;
           });
-    }
+        });
   }
 
   @override
