@@ -37,7 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   cupertino_list_tile: ^0.2.0
   firebase_core: ^2.5.0
-  cloud_firestore: ^4.3.2
+  cloud_firestore: ^4.8.2
   firebase_auth: ^4.6.3
   cloud_functions: ^4.3.3
 
